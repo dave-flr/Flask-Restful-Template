@@ -6,6 +6,7 @@ from flask_cors import CORS
 from flask_restful import Api
 
 from app.config.app import DevelopmentConfig, ProductionConfig
+from app.resources import HelloWorld
 
 load_dotenv()
 
@@ -21,3 +22,6 @@ app.config.from_object(config)
 
 # Modules
 CORS(app)
+
+# Endpoints
+api.add_resource(HelloWorld, '/')
